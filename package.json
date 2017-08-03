@@ -1,0 +1,19 @@
+{
+  "name": "responsive-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Albertico88/responsive-site.git"
+  },
+  "author": "Alberto Grau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Albertico88/responsive-site/issues"
+  },
+  "homepage": "https://github.com/Albertico88/responsive-site#readme"
+}
