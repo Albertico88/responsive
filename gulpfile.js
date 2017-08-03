@@ -4,7 +4,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
 
 
-gulp.task('workflow', function() {
+gulp.task('sass', function() {
   gulp.src('./src/sass/*.sass')
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
@@ -12,9 +12,18 @@ gulp.task('workflow', function() {
       cascade: false
     }))
     .pipe(gulp.dest('dist/css/'))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('serve', ['sass'], function() {
+
+  browserSync.init({
+    server: "./"
+  });
+
+  gulp.watch('./src/sass/*.sass', ['sass']);
+  gulp.watch("./*.html").on('change', browserSync.reload);
 });
 
 
-gulp.task('default', function() {
-  gulp.watch('./src/sass/*.sass', ['workflow']);
-});
+gulp.task('default', ['serve']);
