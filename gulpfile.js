@@ -1,29 +1,28 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
+var sass = require('gulp-sass');
 
 
-gulp.task('sass', function() {
-  gulp.src('./src/sass/*.sass')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false
-    }))
-    .pipe(gulp.dest('dist/css/'))
-    .pipe(browserSync.stream());
-});
-
+// Static Server + watching scss/html files
 gulp.task('serve', ['sass'], function() {
 
   browserSync.init({
     server: "./"
   });
 
-  gulp.watch('./src/sass/*.sass', ['sass']);
-  gulp.watch("./*.html").on('change', browserSync.reload);
+  gulp.watch("src/scss/*scss", ['sass']);
+  gulp.watch("./*html").on('change', browserSync.reload);
 });
 
 
-gulp.task('default', ['serve']);
+// Compile Sass into css & auto inject into browsers.
+gulp.task('sass', function() {
+  return gulp.src("src/scss/*scss")
+    .pipe(sass())
+    .pipe(gulp.dest("src/css"))
+    .pipe(browserSync.stream());
+});
+
+
+// Default task
+gulp.task('default', ['serve', 'sass']);
