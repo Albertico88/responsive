@@ -6,7 +6,9 @@
   position: absolute;
   top: 0;
   right: 0;
-  left: 0;
+  left: 100%;
+
+  overflow: hidden;
 
   ul {
     display: flex;
@@ -29,4 +31,37 @@
     text-decoration: none;
   }
 
+  // menu open
+  &.is-open {
+    left: 0;
+  }
+  transition: all ease-in-out 350ms;
+
+}
+
+
+// Hamburger Menu
+.nav-toggle {
+  display: block;
+  padding: 1em;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  cursor: pointer;
+}
+
+.hamburger, .hamburger::before, .hamburger::after {
+  content: '';
+  display: block;
+  width: 2em;
+  height: 3px;
+  background: $white;
+}
+
+.hamburger::before {
+  transform: translateY(-8px);
+}
+
+.hamburger::after {
+  transform: translateY(5px);
 }
