@@ -396,7 +396,8 @@ template {
   box-sizing: border-box; }
 
 body {
-  color: #048ca8; }
+  color: #048ca8;
+  text-align: center; }
 
 img {
   max-width: 100%;
@@ -440,7 +441,14 @@ h2 {
   font-size: 1.2rem; }
 
 .grid {
-  display: flex; }
+  display: flex;
+  flex-wrap: wrap; }
+
+.col {
+  flex: 0 0 100%; }
+
+.col--full {
+  flex: 0 0 100%; }
 
 .main-header {
   position: absolute;
@@ -521,6 +529,15 @@ h2 {
     transform: rotate(-90deg); }
   .hamburger.is-open::before {
     display: none; }
+
+.features-points {
+  padding: 10vh 0; }
+  .features-points .features-point {
+    margin-bottom: 3em; }
+    .features-points .features-point:first-of-type {
+      margin-top: 1.5em; }
+    .features-points .features-point:last-child {
+      margin-bottom: 0; }
 
 .btn {
   display: inline-block;
