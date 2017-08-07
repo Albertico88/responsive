@@ -465,14 +465,13 @@ h2 {
 
 .main-nav {
   background: #d31869;
-  color: #FAFAFA;
   font-size: 1.2rem;
+  overflow: hidden;
   position: absolute;
   top: 0;
   right: 0;
   left: 100%;
-  overflow: hidden;
-  transition: all ease-in-out 350ms; }
+  transition: all ease-in-out 400ms; }
   .main-nav ul {
     display: flex;
     flex-direction: column;
@@ -481,12 +480,16 @@ h2 {
   .main-nav li {
     flex: 1 1 auto;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-    align-items: center;
+    display: flex; }
+  .main-nav a {
+    text-decoration: none;
+    color: #FAFAFA;
+    flex-basis: 100%;
     display: flex;
     align-items: center;
     justify-content: center; }
-  .main-nav a {
-    text-decoration: none; }
+    .main-nav a:hover {
+      background: rgba(0, 0, 0, 0.1); }
   .main-nav.is-open {
     left: 0; }
 
@@ -503,13 +506,21 @@ h2 {
   display: block;
   width: 2em;
   height: 3px;
-  background: #FAFAFA; }
+  background: #FAFAFA;
+  transition: all ease-in-out 250ms; }
 
 .hamburger::before {
   transform: translateY(-8px); }
 
 .hamburger::after {
   transform: translateY(5px); }
+
+.hamburger.is-open {
+  transform: rotate(45deg); }
+  .hamburger.is-open::after {
+    transform: rotate(-90deg); }
+  .hamburger.is-open::before {
+    display: none; }
 
 .btn {
   display: inline-block;
