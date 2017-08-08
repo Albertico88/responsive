@@ -9,14 +9,16 @@
 @import "vendors/_normalize.scss";
 
 
+// Needed the grid to come before to override the padding
+@import "layout/grid";
+
+
 // Base
 @import "base/base";
 @import "base/typography";
 
 
-
 // Layout
-@import "layout/grid";
 @import "layout/header";
 @import "layout/hero";
 @import "layout/nav";

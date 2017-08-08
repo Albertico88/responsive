@@ -58,6 +58,10 @@ h2 {
 
   }
 
+  @media(min-width: 725px) {
+    max-width: 600px;
+  }
+
 }
 
 .title-footer {
