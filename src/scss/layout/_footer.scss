@@ -2,6 +2,8 @@ footer {
   background: $gray;
   color: $text-inverse;
   padding: 5em 0;
+  position: relative;
+  z-index: 1;
 
   &::before {
     content: '';
@@ -13,6 +15,10 @@ footer {
     left: 0;
     background-image: url(../../assets/logo.svg);
     background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.05;
+    z-index: -1;
   }
 
   a {
@@ -31,13 +37,16 @@ footer {
 
 .nav-footer {
   display: flex;
-  justify-content: space-between;
-  width: 90%;
+  justify-content: space-around;
   margin: 0 auto;
 
   a {
     text-decoration: none;
-    align-items: baseline;
+    font-weight: bold;
   }
 
+}
+
+.container--footer {
+  max-width: 25em;
 }

@@ -590,7 +590,9 @@ h2 {
 footer {
   background: #292B2C;
   color: #FAFAFA;
-  padding: 5em 0; }
+  padding: 5em 0;
+  position: relative;
+  z-index: 1; }
   footer::before {
     content: '';
     display: block;
@@ -600,7 +602,11 @@ footer {
     right: 0;
     left: 0;
     background-image: url(../../assets/logo.svg);
-    background-size: contain; }
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.05;
+    z-index: -1; }
   footer a {
     color: #FAFAFA; }
 
@@ -613,12 +619,14 @@ footer {
 
 .nav-footer {
   display: flex;
-  justify-content: space-between;
-  width: 90%;
+  justify-content: space-around;
   margin: 0 auto; }
   .nav-footer a {
     text-decoration: none;
-    align-items: baseline; }
+    font-weight: bold; }
+
+.container--footer {
+  max-width: 25em; }
 
 .btn {
   display: inline-block;
