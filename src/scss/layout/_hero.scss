@@ -4,4 +4,19 @@
   padding-top: 8em;
   padding-bottom: 8em;
   text-align: center;
+
+  @media(min-width: 725px) {
+    text-align: left;
+    padding-bottom: 0px;
+    height: 80vmin;
+    min-height: 800px;
+  }
+
+  @media(min-width: 725px) {
+    .hero-text {
+      margin-top: 10vmax;
+    }
+
+  }
+
 }
