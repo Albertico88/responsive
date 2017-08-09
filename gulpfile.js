@@ -12,7 +12,7 @@ gulp.task('sass', function() {
 gulp.task('serve', function() {
   browserSync.init(["./src/css/*.css"], {
     server: {
-      baseDir: "./src"
+      baseDir: "./docs"
     }
   });
 });
