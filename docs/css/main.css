@@ -627,7 +627,7 @@ h2 {
   padding-bottom: 7.5em; }
 
 .img-box {
-  background: url(../../assets/phone-in-hand.jpg);
+  background: url(../assets/phone-in-hand.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; }
@@ -646,7 +646,7 @@ h2 {
 
 .cta {
   background: #16db93;
-  background-image: url(../../assets/call-to-action-background.jpg);
+  background-image: url(../assets/call-to-action-background.jpg);
   background-size: cover;
   background-position: center;
   padding: 5em 0;
@@ -668,7 +668,7 @@ footer {
     bottom: 0;
     right: 0;
     left: 0;
-    background-image: url(../../assets/logo.svg);
+    background-image: url(../assets/logo.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
