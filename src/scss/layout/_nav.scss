@@ -2,6 +2,7 @@
   background: $accent;
   font-size: 1.2rem;
   overflow: hidden;
+
 // full screen navigation
   position: absolute;
   top: 0;
@@ -13,6 +14,12 @@
     flex-direction: column;
     justify-content: space-around;
     height: 100vh;
+
+    @media(min-width: 725px) {
+      flex-direction: row;
+      height: auto;
+    }
+
   }
 
   li {
@@ -20,6 +27,11 @@
     flex: 1 1 auto;
     border-bottom: 1px solid rgba(0, 0, 0, .15);
     display: flex;
+
+    @media(min-width: 725px) {
+      border: none;
+    }
+
   }
 
   a {
@@ -30,18 +42,37 @@
     align-items: center;
     justify-content: center;
 
+    @media(min-width: 725px) {
+      justify-content: flex-end;
+    }
+
     &:hover {
       background: rgba(0, 0, 0, .10);
+
+      @media(min-width: 725px) {
+        background: none;
+        color: darken($accent, 3%);
+      }
+
     }
+
   }
 
-
-  // Nav open
-  &.is-open {
+  @media(min-width: 725px) {
+    position: relative;
+    flex: auto;
+    background: none;
+    margin-top: 1em;
+    margin-left: 2em;
     left: 0;
   }
 
-  transition: all ease-in-out 400ms;
+  // Nav open
+  &.is-open {
+    transition: all ease-in-out 400ms;
+    left: 0;
+  }
+
 }
 
 
@@ -54,6 +85,11 @@
   right: 1em;
   top: 1em;
   cursor: pointer;
+
+  @media(min-width: 725px){
+    display: none;
+  }
+
 }
 
 .hamburger, .hamburger::before, .hamburger::after {
@@ -62,8 +98,6 @@
   width: 2em;
   height: 3px;
   background: $white;
-
-  transition: all ease-in-out 250ms
 }
 
 .hamburger::before {

@@ -3,10 +3,12 @@
   padding: .7em 2.5em;
   text-transform: uppercase;
   text-decoration: none;
+  border-radius: 1.5em;
 
   &:not(:last-of-type) {
     margin-bottom: .6em;
   }
+
 }
 
 .btn--primary {
@@ -16,7 +18,9 @@
 
   &:hover, &:focus {
     background: darken($accent, 10%);
+    border-color: darken($accent, 10%);
   }
+
 }
 
 .btn--secondary {
@@ -27,4 +31,5 @@
     background: $text-inverse;
     color: $text-main;
   }
+
 }

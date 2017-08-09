@@ -544,17 +544,23 @@ h2 {
   position: absolute;
   top: 0;
   right: 0;
-  left: 100%;
-  transition: all ease-in-out 400ms; }
+  left: 100%; }
   .main-nav ul {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     height: 100vh; }
+    @media (min-width: 725px) {
+      .main-nav ul {
+        flex-direction: row;
+        height: auto; } }
   .main-nav li {
     flex: 1 1 auto;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     display: flex; }
+    @media (min-width: 725px) {
+      .main-nav li {
+        border: none; } }
   .main-nav a {
     text-decoration: none;
     color: #FAFAFA;
@@ -562,9 +568,25 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center; }
+    @media (min-width: 725px) {
+      .main-nav a {
+        justify-content: flex-end; } }
     .main-nav a:hover {
       background: rgba(0, 0, 0, 0.1); }
+      @media (min-width: 725px) {
+        .main-nav a:hover {
+          background: none;
+          color: #c51662; } }
+  @media (min-width: 725px) {
+    .main-nav {
+      position: relative;
+      flex: auto;
+      background: none;
+      margin-top: 1em;
+      margin-left: 2em;
+      left: 0; } }
   .main-nav.is-open {
+    transition: all ease-in-out 400ms;
     left: 0; }
 
 .nav-toggle {
@@ -574,14 +596,16 @@ h2 {
   right: 1em;
   top: 1em;
   cursor: pointer; }
+  @media (min-width: 725px) {
+    .nav-toggle {
+      display: none; } }
 
 .hamburger, .hamburger::before, .hamburger::after {
   content: '';
   display: block;
   width: 2em;
   height: 3px;
-  background: #FAFAFA;
-  transition: all ease-in-out 250ms; }
+  background: #FAFAFA; }
 
 .hamburger::before {
   transform: translateY(-8px); }
@@ -627,7 +651,8 @@ h2 {
   background-position: center;
   padding: 5em 0;
   background-blend-mode: multiply;
-  color: #FAFAFA; }
+  color: #FAFAFA;
+  position: relative; }
 
 footer {
   background: #292B2C;
@@ -674,7 +699,8 @@ footer {
   display: inline-block;
   padding: .7em 2.5em;
   text-transform: uppercase;
-  text-decoration: none; }
+  text-decoration: none;
+  border-radius: 1.5em; }
   .btn:not(:last-of-type) {
     margin-bottom: .6em; }
 
@@ -683,7 +709,8 @@ footer {
   color: #FAFAFA;
   border: 2px solid #d31869; }
   .btn--primary:hover, .btn--primary:focus {
-    background: #a51352; }
+    background: #a51352;
+    border-color: #a51352; }
 
 .btn--secondary {
   border: 2px solid #FAFAFA;
